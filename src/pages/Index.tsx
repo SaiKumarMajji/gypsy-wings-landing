@@ -20,6 +20,7 @@ import {
   Phone
 } from "lucide-react";
 import heroImage from "@/assets/aviation-hero.jpg";
+import captainImage from "@/assets/captain-vijay.png";
 
 const Index = () => {
   const features = [
@@ -212,25 +213,25 @@ const Index = () => {
       {/* Meet Your Mentor Section */}
       <section id="mentor" className="section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in">
-              Meet Your Mentor – Capt. Vijay Simha
-            </h2>
-            
-            <Card className="bg-gradient-subtle border-border shadow-card">
-              <CardContent className="p-8 md:p-12">
-                <div className="flex justify-center mb-6">
-                  <div className="p-6 bg-gradient-sky rounded-full">
-                    <Plane className="h-12 w-12 text-white" />
-                  </div>
-                </div>
-                
-                <p className="text-lg md:text-xl text-card-foreground leading-relaxed animate-slide-in-right">
-                  With 7+ years of aviation and real cockpit experience, Capt. Vijay Simha has trained 50+ aspiring pilots 
-                  with near 100% success rates. Certified ground instructor and expert in all CPL subjects.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+            <div className="lg:w-1/3">
+              <div className="relative">
+                <img 
+                  src={captainImage} 
+                  alt="Captain Vijay Simha - Aviation Mentor"
+                  className="w-full max-w-sm mx-auto rounded-2xl shadow-elegant"
+                />
+              </div>
+            </div>
+            <div className="lg:w-2/3 text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in">
+                Meet Your Mentor – Capt. Vijay Simha
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-slide-in-right">
+                With 7+ years of aviation and real cockpit experience, Capt. Vijay Simha has trained 50+ aspiring pilots 
+                with near 100% success rates. Certified ground instructor and expert in all CPL subjects.
+              </p>
+            </div>
           </div>
         </div>
       </section>

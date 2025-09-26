@@ -44,8 +44,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Plane className="h-8 w-8 text-primary" />
-            <span className="font-bold text-lg text-foreground">
+            <Plane className={`h-8 w-8 transition-colors ${
+              isScrolled ? "text-primary" : "text-white"
+            }`} />
+            <span className={`font-bold text-lg transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}>
               Gypsy Aviators
             </span>
           </div>
@@ -56,7 +60,11 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  isScrolled 
+                    ? "text-foreground hover:text-primary" 
+                    : "text-white hover:text-white/80"
+                }`}
               >
                 {item.label}
               </button>
