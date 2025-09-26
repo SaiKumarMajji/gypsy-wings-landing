@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Aviation Academy Design System - Professional Sky Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Core Background & Text */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 216 25% 25%;
 
+    /* Card Components */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 216 25% 25%;
 
+    /* Popover Components */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 216 25% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Aviation Blue Primary */
+    --primary: 216 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 216 75% 65%;
+    --primary-dark: 216 95% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Sky Secondary */
+    --secondary: 210 60% 95%;
+    --secondary-foreground: 216 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Subtle Muted Tones */
+    --muted: 210 30% 96%;
+    --muted-foreground: 216 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Aviation Accent */
+    --accent: 200 85% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Error States */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 216 25% 90%;
+    --input: 216 25% 90%;
+    --ring: 216 85% 35%;
 
-    --radius: 0.5rem;
+    /* Aviation Gradients */
+    --gradient-sky: linear-gradient(135deg, hsl(200 85% 65%), hsl(216 85% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(216 85% 35%) 0%, hsl(200 85% 45%) 50%, hsl(210 75% 85%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 60% 98%), hsl(210 30% 96%));
+
+    /* Professional Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(216 25% 25% / 0.08);
+    --shadow-hero: 0 10px 40px -10px hsl(216 85% 35% / 0.3);
+    --shadow-float: 0 8px 30px -8px hsl(216 25% 25% / 0.12);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +126,52 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Aviation Gradients */
+  .bg-gradient-sky {
+    background: var(--gradient-sky);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Professional Shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
   }
 }
