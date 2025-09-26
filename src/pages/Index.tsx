@@ -17,7 +17,12 @@ import {
   Radio,
   MapPin,
   Mail,
-  Phone
+  Phone,
+  Instagram,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Youtube
 } from "lucide-react";
 import heroImage from "@/assets/aviation-hero.jpg";
 import captainImage from "@/assets/captain-vijay.png";
@@ -224,8 +229,8 @@ const Index = () => {
               </div>
             </div>
             <div className="lg:w-2/3 text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in">
-                Meet Your Mentor – Capt. Vijay Simha
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in whitespace-nowrap">
+                Meet Your Mentor –<br className="hidden lg:block" /><span className="lg:ml-2">Capt. Vijay Simha</span>
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-slide-in-right">
                 With 7+ years of aviation and real cockpit experience, Capt. Vijay Simha has trained 50+ aspiring pilots 
@@ -289,12 +294,56 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-8">
+      <footer className="bg-foreground text-background py-12">
         <div className="container-custom">
-          <div className="text-center">
-            <p className="text-sm">
-              © 2025 Gypsy Aviators Aviation Academy. All Rights Reserved.
-            </p>
+          <div className="flex flex-col items-center space-y-6">
+            {/* Social Media Links */}
+            <div className="flex items-center space-x-6">
+              <a 
+                href="https://www.instagram.com/gypsy_aviators" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-background hover:text-background/80 transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a 
+                href="#" 
+                className="text-background hover:text-background/80 transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a 
+                href="#" 
+                className="text-background hover:text-background/80 transition-colors"
+                aria-label="Follow us on Twitter"
+              >
+                <Twitter className="h-6 w-6" />
+              </a>
+              <a 
+                href="#" 
+                className="text-background hover:text-background/80 transition-colors"
+                aria-label="Follow us on LinkedIn"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a 
+                href="#" 
+                className="text-background hover:text-background/80 transition-colors"
+                aria-label="Subscribe to our YouTube channel"
+              >
+                <Youtube className="h-6 w-6" />
+              </a>
+            </div>
+            
+            {/* Copyright */}
+            <div className="text-center">
+              <p className="text-sm">
+                © 2025 Gypsy Aviators Aviation Academy. All Rights Reserved.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
