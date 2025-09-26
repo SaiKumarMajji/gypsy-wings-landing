@@ -225,7 +225,7 @@ const Index = () => {
                 {subjects.map((subject, index) => (
                   <div
                     key={subject}
-                    className="flex items-center bg-gradient-sky text-white px-4 py-3 rounded-lg animate-scale-in"
+                    className="flex flex-col md:flex-row justify-center items-center bg-gradient-sky text-white md:px-4 py-3 rounded-lg animate-scale-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <BookOpen className="h-5 w-5 mr-2" />
