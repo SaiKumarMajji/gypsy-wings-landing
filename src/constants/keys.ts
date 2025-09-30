@@ -1,0 +1,10 @@
+export const SUCCESS_KEY = 'success';
+export const FAILURE_KEY = 'failure';
+export const ERROR_KEY = 'error';
+export const ACCESS_KEY = 'jwt_access_token';
+export const ADD_KEY = 'add';
+export const EDIT_KEY = 'edit';
+export const CLIENT = 'client';
+export const ADMIN = 'admin';
+export const PRODUCTION = 'prod';
+export const LOGIN_TOKEN = 'login_token';
