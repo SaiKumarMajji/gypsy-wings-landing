@@ -36,45 +36,63 @@ import Autoplay from "embla-carousel-autoplay";
 import heroImage from "@/assets/aviation-hero.jpg";
 import captainImage from "@/assets/captain-vijay.png";
 import hamsaImage from "@/assets/hamsa-durgesh.png";
+import studentRajesh from "@/assets/student-rajesh.jpg";
+import studentPriya from "@/assets/student-priya.jpg";
+import studentArjun from "@/assets/student-arjun.jpg";
+import studentSneha from "@/assets/student-sneha.jpg";
+import studentVikram from "@/assets/student-vikram.jpg";
+import flagUSA from "@/assets/flag-usa.jpg";
+import flagIndia from "@/assets/flag-india.jpg";
+import flagPhilippines from "@/assets/flag-philippines.jpg";
+import flagSouthAfrica from "@/assets/flag-south-africa.jpg";
+import flagEurope from "@/assets/flag-europe.jpg";
+import flagCanada from "@/assets/flag-canada.jpg";
+import flagAustralia from "@/assets/flag-australia.jpg";
+import flagNewZealand from "@/assets/flag-new-zealand.jpg";
 
 const Index = () => {
   const reviews = [
     {
       name: "Rajesh Kumar",
+      image: studentRajesh,
       rating: 5,
       review: "Exceptional training experience! The instructors are highly knowledgeable and supportive. I cleared my CPL exams with confidence thanks to Gypsy Aviators.",
     },
     {
       name: "Priya Sharma",
+      image: studentPriya,
       rating: 5,
       review: "Best aviation academy in Hyderabad! The personalized mentorship and practical approach made all the difference in my pilot training journey.",
     },
     {
       name: "Arjun Reddy",
+      image: studentArjun,
       rating: 5,
       review: "Captain Vijay's teaching methods are outstanding. His real-world experience and dedication helped me achieve my aviation dreams.",
     },
     {
       name: "Sneha Patel",
+      image: studentSneha,
       rating: 5,
       review: "The ground school program is comprehensive and well-structured. Mock tests and doubt-clearing sessions were extremely helpful for DGCA exams.",
     },
     {
       name: "Vikram Singh",
+      image: studentVikram,
       rating: 5,
       review: "Professional and supportive environment. The career mentorship program gave me valuable insights into the aviation industry.",
     },
   ];
 
   const partners = [
-    { name: "United States", flag: "🇺🇸" },
-    { name: "India", flag: "🇮🇳" },
-    { name: "Philippines", flag: "🇵🇭" },
-    { name: "South Africa", flag: "🇿🇦" },
-    { name: "Europe", flag: "🇪🇺" },
-    { name: "Canada", flag: "🇨🇦" },
-    { name: "Australia", flag: "🇦🇺" },
-    { name: "New Zealand", flag: "🇳🇿" },
+    { name: "United States", flag: flagUSA },
+    { name: "India", flag: flagIndia },
+    { name: "Philippines", flag: flagPhilippines },
+    { name: "South Africa", flag: flagSouthAfrica },
+    { name: "Europe", flag: flagEurope },
+    { name: "Canada", flag: flagCanada },
+    { name: "Australia", flag: flagAustralia },
+    { name: "New Zealand", flag: flagNewZealand },
   ];
 
   const features = [
@@ -381,16 +399,25 @@ const Index = () => {
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <Card className="bg-card border-border shadow-card h-full">
                       <CardContent className="p-6 flex flex-col h-full">
-                        <div className="flex gap-1 mb-4">
-                          {[...Array(review.rating)].map((_, i) => (
-                            <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                          ))}
+                        <div className="flex items-center gap-4 mb-4">
+                          <img
+                            src={review.image}
+                            alt={review.name}
+                            className="w-16 h-16 rounded-full object-cover"
+                          />
+                          <div className="flex-1">
+                            <p className="font-semibold text-card-foreground mb-1">
+                              {review.name}
+                            </p>
+                            <div className="flex gap-1">
+                              {[...Array(review.rating)].map((_, i) => (
+                                <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                              ))}
+                            </div>
+                          </div>
                         </div>
-                        <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed">
                           "{review.review}"
-                        </p>
-                        <p className="font-semibold text-card-foreground">
-                          – {review.name}
                         </p>
                       </CardContent>
                     </Card>
@@ -421,7 +448,13 @@ const Index = () => {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <CardContent className="p-6">
-                  <div className="text-6xl mb-4">{partner.flag}</div>
+                  <div className="mb-4 flex items-center justify-center">
+                    <img
+                      src={partner.flag}
+                      alt={`${partner.name} flag`}
+                      className="w-24 h-16 object-cover rounded-md shadow-sm"
+                    />
+                  </div>
                   <h3 className="font-semibold text-card-foreground text-lg">
                     {partner.name}
                   </h3>
