@@ -292,11 +292,11 @@ const Index = () => {
                 {subjects.map((subject, index) => (
                   <div
                     key={subject}
-                    className="flex flex-col md:flex-row justify-center items-center bg-gradient-sky text-white md:px-4 py-3 rounded-lg animate-scale-in"
+                    className="flex flex-col flex-shrink-0 md:flex-row justify-center items-center bg-gradient-sky text-white md:px-4 py-3 rounded-lg animate-scale-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <BookOpen className="h-5 w-5 mr-2" />
-                    <span className="font-medium">{subject}</span>
+                    <span className="font-medium text-center">{subject}</span>
                   </div>
                 ))}
               </div>
@@ -424,8 +424,8 @@ const Index = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex" />
-              <CarouselNext className="hidden md:flex" />
+              <CarouselPrevious className="hidden xl:flex" />
+              <CarouselNext className="hidden xl:flex" />
             </Carousel>
           </div>
         </div>
