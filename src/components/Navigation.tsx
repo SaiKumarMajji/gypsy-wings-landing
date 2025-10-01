@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/gypsy-aviators-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,10 +44,12 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Plane className={`h-8 w-8 transition-colors ${
-              isScrolled ? "text-primary" : "text-white"
-            }`} />
+          <div className="flex items-center space-x-3">
+            <img 
+              src={logo} 
+              alt="Gypsy Aviators Logo" 
+              className="h-12 w-12 object-contain"
+            />
             <span className={`font-bold text-lg transition-colors ${
               isScrolled ? "text-foreground" : "text-white"
             }`}>
