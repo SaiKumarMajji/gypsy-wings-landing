@@ -23,11 +23,60 @@ import {
   Twitter,
   Linkedin,
   Youtube,
+  Star,
 } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import heroImage from "@/assets/aviation-hero.jpg";
 import captainImage from "@/assets/captain-vijay.png";
+import hamsaImage from "@/assets/hamsa-durgesh.png";
 
 const Index = () => {
+  const reviews = [
+    {
+      name: "Rajesh Kumar",
+      rating: 5,
+      review: "Exceptional training experience! The instructors are highly knowledgeable and supportive. I cleared my CPL exams with confidence thanks to Gypsy Aviators.",
+    },
+    {
+      name: "Priya Sharma",
+      rating: 5,
+      review: "Best aviation academy in Hyderabad! The personalized mentorship and practical approach made all the difference in my pilot training journey.",
+    },
+    {
+      name: "Arjun Reddy",
+      rating: 5,
+      review: "Captain Vijay's teaching methods are outstanding. His real-world experience and dedication helped me achieve my aviation dreams.",
+    },
+    {
+      name: "Sneha Patel",
+      rating: 5,
+      review: "The ground school program is comprehensive and well-structured. Mock tests and doubt-clearing sessions were extremely helpful for DGCA exams.",
+    },
+    {
+      name: "Vikram Singh",
+      rating: 5,
+      review: "Professional and supportive environment. The career mentorship program gave me valuable insights into the aviation industry.",
+    },
+  ];
+
+  const partners = [
+    { name: "United States", flag: "🇺🇸" },
+    { name: "India", flag: "🇮🇳" },
+    { name: "Philippines", flag: "🇵🇭" },
+    { name: "South Africa", flag: "🇿🇦" },
+    { name: "Europe", flag: "🇪🇺" },
+    { name: "Canada", flag: "🇨🇦" },
+    { name: "Australia", flag: "🇦🇺" },
+    { name: "New Zealand", flag: "🇳🇿" },
+  ];
+
   const features = [
     {
       icon: Award,
@@ -238,11 +287,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Meet Your Mentor Section */}
+      {/* Meet Your Mentors Section */}
       <section id="mentor" className="section-padding">
         <div className="container-custom">
-          <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
-            {/* Image */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+              Meet Your Mentors
+            </h2>
+          </div>
+
+          {/* Mentor 1 - Captain Vijay Simha */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto mb-20">
             <div className="lg:w-1/3">
               <div className="relative">
                 <img
@@ -253,21 +308,126 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Text */}
             <div className="lg:w-2/3 text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 animate-fade-in">
-                Meet Your Mentor
-                <span className="block lg:inline lg:ml-2 text-primary">
-                  – Capt. Vijay Simha
-                </span>
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-slide-in-right">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                <span className="text-primary">Capt. Vijay Simha</span>
+              </h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 With 7+ years of aviation and real cockpit experience, Capt.
                 Vijay Simha has trained 50+ aspiring pilots with near 100%
                 success rates. Certified ground instructor and expert in all CPL
                 subjects.
               </p>
             </div>
+          </div>
+
+          {/* Mentor 2 - Hamsa Durgesh */}
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12 max-w-6xl mx-auto">
+            <div className="lg:w-1/3">
+              <div className="relative">
+                <img
+                  src={hamsaImage}
+                  alt="Hamsa Durgesh - Founder and Instructor"
+                  className="w-full max-w-sm mx-auto rounded-2xl shadow-elegant"
+                />
+              </div>
+            </div>
+
+            <div className="lg:w-2/3 text-center lg:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                <span className="text-primary">Hamsa Durgesh</span> - Founder & Instructor
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Hello, I'm Hamsa Durgesh, Founder and Instructor at Gypsy Aviators Aviation Academy - GAAA. With over 10+ years of experience in the aviation industry, I've had the privilege of working across different areas of aviation and training, which allows me to bring real-world knowledge and professional insights to every student I mentor.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Throughout my career, I've trained and guided aspiring pilots, helping them develop not just the technical skills, but also the confidence, discipline, and professionalism needed to thrive in this highly competitive industry.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                At Gypsy Aviators, what sets our teaching apart is a personalized approach—I believe every student has unique strengths, and I work closely to bring out the best in them. My goal is to create an environment where learning is not just about passing exams, but about building a strong foundation for a successful aviation career.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Aviation is more than a career—it's a passion. And through this academy, my mission is to inspire the next generation of aviators to aim higher, dream bigger, and soar with confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Reviews Section */}
+      <section id="reviews" className="section-padding bg-gradient-subtle">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+              What Our Students Say
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {reviews.map((review, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="bg-card border-border shadow-card h-full">
+                      <CardContent className="p-6 flex flex-col h-full">
+                        <div className="flex gap-1 mb-4">
+                          {[...Array(review.rating)].map((_, i) => (
+                            <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                          ))}
+                        </div>
+                        <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                          "{review.review}"
+                        </p>
+                        <p className="font-semibold text-card-foreground">
+                          – {review.name}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section id="partners" className="section-padding">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+              We Are Partnered With
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {partners.map((partner, index) => (
+              <Card
+                key={partner.name}
+                className="bg-card border-border shadow-card text-center animate-scale-in hover:shadow-elegant transition-shadow"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <CardContent className="p-6">
+                  <div className="text-6xl mb-4">{partner.flag}</div>
+                  <h3 className="font-semibold text-card-foreground text-lg">
+                    {partner.name}
+                  </h3>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
