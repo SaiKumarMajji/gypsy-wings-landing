@@ -3,6 +3,7 @@ import { Education, EducationStream, ToastTypes } from "@/constants/enumValues";
 import { getSuccessMessage } from "@/constants/getMessages";
 import { useToast } from "@/hooks/use-toast";
 import {
+  getAuthLoadingStatus,
   getAuthSuccessCode,
   getUserDetailPopupStatus,
 } from "@/services/redux/selectors/authSelector";
@@ -22,6 +23,7 @@ import { userDetailSchema } from "@/utils/schemas";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { setShowUserDetailPopup } from "../../../services/redux/slices/authSlice";
+import { Loader2 } from "lucide-react";
 
 function UserDetailPopup() {
   const dispatch = useAppDispatch();
@@ -29,6 +31,7 @@ function UserDetailPopup() {
 
   const successCode = useAppSelector(getAuthSuccessCode);
   const modalOpen = useAppSelector(getUserDetailPopupStatus);
+  const loading = useAppSelector(getAuthLoadingStatus);
 
   const [consent, setConsent] = useState<boolean>(false);
 
@@ -201,9 +204,16 @@ function UserDetailPopup() {
             className="bg-primary mb-5 text-primary-foreground hover:bg-primary-dark shadow-hero animate-fade-in"
             style={{ animationDelay: "300ms" }}
             onClick={handleSubmit}
-            disabled={!isValid || !consent}
+            disabled={!isValid || !consent || loading}
           >
-            Book My Free Call
+            {loading ? (
+              <div className="flex gap-3 items-center">
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Submitting
+              </div>
+            ) : (
+              "Book My Free Call"
+            )}
           </Button>
         </div>
       </div>
