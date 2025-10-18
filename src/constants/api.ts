@@ -6,13 +6,13 @@ interface ApiConfig {
 }
 
 export const API: ApiConfig = {
-    currentEnv: import.meta.env.VITE_SERVER ?? 'prod',
+    currentEnv: import.meta.env.VITE_SERVER || 'prod',
     baseURL: {
-        loc: import.meta.env.VITE_API_URL_LOC ?? 'http://localhost:5000',
-        dev: import.meta.env.VITE_API_URL_DEV ?? 'http://localhost:5000',
-        test: import.meta.env.VITE_API_URL_TEST ?? '',
-        uat: import.meta.env.VITE_API_URL_UAT ?? '',
-        prod: import.meta.env.VITE_API_URL_PROD ?? 'https://gypsy-aviators.onrender.com'
+        loc: import.meta.env.VITE_API_URL_LOC || 'http://localhost:5000',
+        dev: import.meta.env.VITE_API_URL_DEV || 'http://localhost:5000',
+        test: import.meta.env.VITE_API_URL_TEST || '',
+        uat: import.meta.env.VITE_API_URL_UAT || '',
+        prod: import.meta.env.VITE_API_URL_PROD || 'https://gypsy-aviators.onrender.com'
     },
     baseRoute: {
         loc: import.meta.env.VITE_BASE_ROUTE_LOC ?? '',
@@ -28,9 +28,9 @@ export const API: ApiConfig = {
 };
 
 export const getBaseUrl = (): string => {
-    return API.baseURL[API.currentEnv] ?? API.baseURL.prod;
+    return API.baseURL[API.currentEnv] || API.baseURL.prod;
 };
 
 export const getBaseRoute = (): string => {
-    return API.baseRoute[API.currentEnv] ??  API.baseRoute.prod;
+    return API.baseRoute[API.currentEnv] ||  API.baseRoute.prod;
 };
