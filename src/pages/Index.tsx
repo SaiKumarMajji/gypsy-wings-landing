@@ -36,11 +36,11 @@ import Autoplay from "embla-carousel-autoplay";
 import heroImage from "@/assets/aviation-hero.jpg";
 import captainImage from "@/assets/captain-vijay.png";
 import hamsaImage from "@/assets/hamsa-durgesh.png";
-import studentRajesh from "@/assets/student-rajesh.jpg";
-import studentPriya from "@/assets/student-priya.jpg";
-import studentArjun from "@/assets/student-arjun.jpg";
-import studentSneha from "@/assets/student-sneha.jpg";
-import studentVikram from "@/assets/student-vikram.jpg";
+import studentDhruv from "@/assets/student-dhruv.jpg";
+import studentJeyaprakash from "@/assets/student-jeyaprakash.jpg";
+import studentBharath from "@/assets/student-bharath.jpg";
+import studentBhanuPrakash from "@/assets/student-bhanuprakash.jpg";
+import studentRahul from "@/assets/student-rahul.jpg";
 import flagUSA from "@/assets/flag-usa.jpg";
 import flagIndia from "@/assets/flag-india.jpg";
 import flagPhilippines from "@/assets/flag-philippines.jpg";
@@ -53,32 +53,32 @@ import flagNewZealand from "@/assets/flag-new-zealand.jpg";
 const Index = () => {
   const reviews = [
     {
-      name: "Rajesh Kumar",
-      image: studentRajesh,
+      name: "Dhruv",
+      image: studentDhruv,
       rating: 5,
       review: "Exceptional training experience! The instructors are highly knowledgeable and supportive. I cleared my CPL exams with confidence thanks to Gypsy Aviators.",
     },
     {
-      name: "Priya Sharma",
-      image: studentPriya,
+      name: "Jeyaprakash",
+      image: studentJeyaprakash,
       rating: 5,
       review: "Best aviation academy in Hyderabad! The personalized mentorship and practical approach made all the difference in my pilot training journey.",
     },
     {
-      name: "Arjun Reddy",
-      image: studentArjun,
+      name: "Bharath",
+      image: studentBharath,
       rating: 5,
       review: "Captain Vijay's teaching methods are outstanding. His real-world experience and dedication helped me achieve my aviation dreams.",
     },
     {
-      name: "Sneha Patel",
-      image: studentSneha,
+      name: "Bhanuprakash",
+      image: studentBhanuPrakash,
       rating: 5,
       review: "The ground school program is comprehensive and well-structured. Mock tests and doubt-clearing sessions were extremely helpful for DGCA exams.",
     },
     {
-      name: "Vikram Singh",
-      image: studentVikram,
+      name: "Rahul",
+      image: studentRahul,
       rating: 5,
       review: "Professional and supportive environment. The career mentorship program gave me valuable insights into the aviation industry.",
     },
@@ -321,7 +321,7 @@ const Index = () => {
                 <img
                   src={captainImage}
                   alt="Captain Vijay Simha - Aviation Mentor"
-                  className="w-full max-w-sm mx-auto rounded-2xl shadow-elegant"
+                  className="w-full max-w-sm mx-auto rounded-2xl shadow-elegant flex-shrink-0"
                 />
               </div>
             </div>

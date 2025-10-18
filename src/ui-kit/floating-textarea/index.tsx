@@ -89,7 +89,7 @@ export const FloatingTextArea: React.FC<IUIFloatingTextArea> = ({
       <textarea
         id={name}
         className={cn(
-          `${textHeightClass} peer font-lora px-3 py-2 w-full border-2 placeholder:text-sm placeholder:font-lora bg-white border-primaryText-300 rounded-md text-primaryText-900 focus:outline-none focus:border-blue-500 focus:ring-0 transition-all duration-300 ${
+          `${textHeightClass} peer font-lora px-3 py-2 w-full border-2 placeholder:text-sm  bg-white border-primaryText-300 rounded-md text-primaryText-900 focus:outline-none focus:border-blue-500 focus:ring-0 transition-all duration-300 ${
             error && touched ? "border-error" : ""
           }`
         )}
@@ -102,7 +102,7 @@ export const FloatingTextArea: React.FC<IUIFloatingTextArea> = ({
         disabled={disabled}
         onKeyDown={numberOnly || alphabetOnly ? handleKeyDown : undefined}
       />
-      {(isFocused || value) && (
+      {floatingLabel && (
         <label
           htmlFor={name}
           className={`absolute top-2 text-sm left-3 text-primaryText-500 transition-all duration-300 transform bg-white px-1

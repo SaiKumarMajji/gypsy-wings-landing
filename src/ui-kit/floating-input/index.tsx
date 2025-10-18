@@ -198,11 +198,8 @@ export const FloatingInput: React.FC<IUIFloatingInput> = ({
             readOnly: readonly,
           }}
           sx={{
-            "& input": {
-              fontFamily: '"Lora", serif',
-            },
             "& input::placeholder": {
-              fontFamily: '"Lora", serif',
+              fontSize: "15px",
             },
             "& .MuiOutlinedInput-root": {
               "&:hover fieldset": {

@@ -11,7 +11,7 @@ const Navigation = () => {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#why-choose-us", label: "Why Choose Us" },
-    { href: "#programs", label: "Programs" },
+    { href: "#programs", label: "Courses" },
     { href: "#mentor", label: "Meet Your Mentor" },
     { href: "#contact", label: "Contact" },
   ];
@@ -20,7 +20,7 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,25 +34,21 @@ const Navigation = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-float" 
-          : "bg-transparent"
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-float `}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 px-4">
+        <div className="flex items-center justify-between h-16 px-4 py-2">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img 
-              src={logo} 
-              alt="Gypsy Aviators Logo" 
-              className="h-12 w-12 object-contain"
+          <div className="flex items-center space-x-3 ">
+            <img
+              src={logo}
+              alt="Gypsy Aviators Logo"
+              className="w-auto h-[64px] object-contain mix-blend-multiply"
             />
-            <span className={`font-bold text-lg transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
-            }`}>
+            <span
+              className={`font-bold text-lg transition-colors text-foreground`}
+            >
               Gypsy Aviators
             </span>
           </div>
@@ -64,9 +60,9 @@ const Navigation = () => {
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
                 className={`text-sm font-medium transition-colors ${
-                  isScrolled 
-                    ? "text-foreground hover:text-primary" 
-                    : "text-white hover:text-white/80"
+                  isScrolled
+                    ? "text-foreground hover:text-primary"
+                    : "text-foreground hover:text-white/80"
                 }`}
               >
                 {item.label}
@@ -84,7 +80,7 @@ const Navigation = () => {
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
-              <Menu className="h-6 w-6 text-white" />
+              <Menu className="h-6 w-6 text-foreground" />
             )}
           </Button>
         </div>

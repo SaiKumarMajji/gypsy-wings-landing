@@ -5,20 +5,24 @@ interface AuthStateInterface {
     isLoading: boolean;
     successCode: string | null;
     errorCode: string | null;
-    data: any
+    showUserDetailPopup: boolean
 };
 
 const initialState: AuthStateInterface = {
     isLoading: false,
     successCode: null,
     errorCode: null,
-    data: null
+    showUserDetailPopup: false
 };
 
 const authSlice: any = createSlice({
     initialState,
     name: 'auth',
     reducers: {
+        clearStatusCode: (state) => {
+            state.errorCode = null;
+            state.successCode = null;
+        },
         submitUserDetailsRequest(state, action) {
             state.isLoading = true;
             state.successCode = null;
@@ -31,13 +35,18 @@ const authSlice: any = createSlice({
         submitUserDetailsFailure(state, action) {
             state.isLoading = false;
             state.errorCode = action.payload.status_code;
+        },
+        setShowUserDetailPopup(state, action) {
+            state.showUserDetailPopup = action.payload;
         }
     }
 });
 
 export const {
+    clearStatusCode,
     submitUserDetailsRequest,
     submitUserDetailsSuccess,
-    submitUserDetailsFailure
+    submitUserDetailsFailure,
+    setShowUserDetailPopup
 } = authSlice.actions;
 export default authSlice.reducer;

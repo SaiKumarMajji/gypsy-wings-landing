@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import { colors } from './src/constants/colors';
+import { palette } from './src/theme';
 
 export default {
   darkMode: ["class"],
@@ -59,6 +61,8 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        ...colors,
+        ...palette
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -107,12 +111,12 @@ export default {
       fontFamily: {
         sans: [
           "Inter",
-          "-apple-system", 
-          "BlinkMacSystemFont", 
-          "Segoe UI", 
-          "Roboto", 
-          "Helvetica Neue", 
-          "Arial", 
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
           "sans-serif"
         ],
       },
