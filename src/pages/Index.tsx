@@ -56,31 +56,36 @@ const Index = () => {
       name: "Dhruv",
       image: studentDhruv,
       rating: 5,
-      review: "Exceptional training experience! The instructors are highly knowledgeable and supportive. I cleared my CPL exams with confidence thanks to Gypsy Aviators.",
+      review:
+        "Exceptional training experience! The instructors are highly knowledgeable and supportive. I cleared my CPL exams with confidence thanks to Gypsy Aviators.",
     },
     {
       name: "Jeyaprakash",
       image: studentJeyaprakash,
       rating: 5,
-      review: "Best aviation academy in Hyderabad! The personalized mentorship and practical approach made all the difference in my pilot training journey.",
+      review:
+        "Best aviation academy in Hyderabad! The personalized mentorship and practical approach made all the difference in my pilot training journey.",
     },
     {
       name: "Bharath",
       image: studentBharath,
       rating: 5,
-      review: "Captain Vijay's teaching methods are outstanding. His real-world experience and dedication helped me achieve my aviation dreams.",
+      review:
+        "Captain Vijay's teaching methods are outstanding. His real-world experience and dedication helped me achieve my aviation dreams.",
     },
     {
       name: "Bhanuprakash",
       image: studentBhanuPrakash,
       rating: 5,
-      review: "The ground school program is comprehensive and well-structured. Mock tests and doubt-clearing sessions were extremely helpful for DGCA exams.",
+      review:
+        "The ground school program is comprehensive and well-structured. Mock tests and doubt-clearing sessions were extremely helpful for DGCA exams.",
     },
     {
       name: "Rahul",
       image: studentRahul,
       rating: 5,
-      review: "Professional and supportive environment. The career mentorship program gave me valuable insights into the aviation industry.",
+      review:
+        "Professional and supportive environment. The career mentorship program gave me valuable insights into the aviation industry.",
     },
   ];
 
@@ -136,8 +141,9 @@ const Index = () => {
       features: [
         "Private Pilot License (PPL)",
         "Commercial Pilot License (CPL)",
+        "Airline Transport Pilot License (ATPL)",
         "Airline Interview Prep",
-        "Pre & Post Type Rating",
+        "Preparation & Post Type Rating (B737)",
       ],
     },
     {
@@ -147,7 +153,7 @@ const Index = () => {
       features: [
         "DGCA-focused modules",
         "Interactive sessions",
-        "Mock tests",
+        "Mock Tests, Group Discussion and Personal Interview",
         "Doubt-clearing support",
       ],
     },
@@ -221,7 +227,7 @@ const Index = () => {
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-              Welcome to Gypsy Aviators Aviation Academy
+              Welcome to Gypsy Aviators Aviation Academy - GAAA
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-slide-in-right">
               With 7+ years of hands-on aviation experience, industry insights,
@@ -314,7 +320,54 @@ const Index = () => {
             </h2>
           </div>
 
-          {/* Mentor 1 - Captain Vijay Simha */}
+          {/* Mentor 1 - Hamsa Durgesh */}
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12 max-w-6xl mx-auto">
+            <div className="lg:w-1/3">
+              <div className="relative">
+                <img
+                  src={hamsaImage}
+                  alt="Hamsa Durgesh - Founder and Instructor"
+                  className="w-full max-w-sm mx-auto rounded-2xl shadow-elegant"
+                />
+              </div>
+            </div>
+
+            <div className="lg:w-2/3 text-center lg:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                <span className="text-primary">Hamsa Durgesh</span> - Founder &
+                Instructor
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Hello, I'm Hamsa Durgesh, Founder and Instructor at Gypsy
+                Aviators Aviation Academy - GAAA. With over 10+ years of
+                experience in the aviation industry, I've had the privilege of
+                working across different areas of aviation and training, which
+                allows me to bring real-world knowledge and professional
+                insights to every student I mentor.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Throughout my career, I've trained and guided aspiring pilots,
+                helping them develop not just the technical skills, but also the
+                confidence, discipline, and professionalism needed to thrive in
+                this highly competitive industry.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                At Gypsy Aviators, what sets our teaching apart is a
+                personalized approach—I believe every student has unique
+                strengths, and I work closely to bring out the best in them. My
+                goal is to create an environment where learning is not just
+                about passing exams, but about building a strong foundation for
+                a successful aviation career.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Aviation is more than a career—it's a passion. And through this
+                academy, my mission is to inspire the next generation of
+                aviators to aim higher, dream bigger, and soar with confidence.
+              </p>
+            </div>
+          </div>
+
+          {/* Mentor 2 - Captain Vijay Simha */}
           <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto mb-20">
             <div className="lg:w-1/3">
               <div className="relative">
@@ -335,37 +388,6 @@ const Index = () => {
                 Vijay Simha has trained 50+ aspiring pilots with near 100%
                 success rates. Certified ground instructor and expert in all CPL
                 subjects.
-              </p>
-            </div>
-          </div>
-
-          {/* Mentor 2 - Hamsa Durgesh */}
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-12 max-w-6xl mx-auto">
-            <div className="lg:w-1/3">
-              <div className="relative">
-                <img
-                  src={hamsaImage}
-                  alt="Hamsa Durgesh - Founder and Instructor"
-                  className="w-full max-w-sm mx-auto rounded-2xl shadow-elegant"
-                />
-              </div>
-            </div>
-
-            <div className="lg:w-2/3 text-center lg:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                <span className="text-primary">Hamsa Durgesh</span> - Founder & Instructor
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Hello, I'm Hamsa Durgesh, Founder and Instructor at Gypsy Aviators Aviation Academy - GAAA. With over 10+ years of experience in the aviation industry, I've had the privilege of working across different areas of aviation and training, which allows me to bring real-world knowledge and professional insights to every student I mentor.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Throughout my career, I've trained and guided aspiring pilots, helping them develop not just the technical skills, but also the confidence, discipline, and professionalism needed to thrive in this highly competitive industry.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                At Gypsy Aviators, what sets our teaching apart is a personalized approach—I believe every student has unique strengths, and I work closely to bring out the best in them. My goal is to create an environment where learning is not just about passing exams, but about building a strong foundation for a successful aviation career.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Aviation is more than a career—it's a passion. And through this academy, my mission is to inspire the next generation of aviators to aim higher, dream bigger, and soar with confidence.
               </p>
             </div>
           </div>
@@ -396,7 +418,10 @@ const Index = () => {
             >
               <CarouselContent>
                 {reviews.map((review, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem
+                    key={index}
+                    className="md:basis-1/2 lg:basis-1/3"
+                  >
                     <Card className="bg-card border-border shadow-card h-full">
                       <CardContent className="p-6 flex flex-col h-full">
                         <div className="flex items-center gap-4 mb-4">
@@ -411,7 +436,10 @@ const Index = () => {
                             </p>
                             <div className="flex gap-1">
                               {[...Array(review.rating)].map((_, i) => (
-                                <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                                <Star
+                                  key={i}
+                                  className="h-4 w-4 fill-primary text-primary"
+                                />
                               ))}
                             </div>
                           </div>
@@ -436,7 +464,7 @@ const Index = () => {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-              We Are Partnered With
+              CPL Training Locations
             </h2>
           </div>
 

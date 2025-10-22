@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/gypsy-aviators-logo.png";
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -15,15 +14,6 @@ const Navigation = () => {
     { href: "#mentor", label: "Meet Your Mentor" },
     { href: "#contact", label: "Contact" },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -49,7 +39,7 @@ const Navigation = () => {
             <span
               className={`font-bold text-lg transition-colors text-foreground`}
             >
-              Gypsy Aviators
+              Gypsy Aviators Aviation Academy
             </span>
           </div>
 
@@ -59,11 +49,7 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors ${
-                  isScrolled
-                    ? "text-foreground hover:text-primary"
-                    : "text-foreground hover:text-white/80"
-                }`}
+                className={`text-sm font-medium text-foreground transition-colors`}
               >
                 {item.label}
               </button>

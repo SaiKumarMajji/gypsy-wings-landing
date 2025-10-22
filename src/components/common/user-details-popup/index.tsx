@@ -105,7 +105,7 @@ function UserDetailPopup() {
           </Text>
         </div>
       }
-      noCloseIcon={true}
+      noCloseIcon={false}
       popupContClass="md:min-w-[35%] xl:min-w-[40%] mx-5 md:mx-0 md:p-0 max-h-[95%] overflow-y-auto"
     >
       <div className="flex flex-col justify-center items-center space-y-5">
