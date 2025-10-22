@@ -1,4 +1,4 @@
-import { RootState } from "../store";
+import { RootState } from "../rootReducer";
 
 export const getAuthLoadingStatus = (state: RootState) => state?.auth?.isLoading;
 export const getAuthSuccessCode = (state: RootState) => state?.auth?.successCode;

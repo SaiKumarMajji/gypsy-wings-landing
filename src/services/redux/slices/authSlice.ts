@@ -15,7 +15,7 @@ const initialState: AuthStateInterface = {
     showUserDetailPopup: false
 };
 
-const authSlice: any = createSlice({
+const authSlice = createSlice({
     initialState,
     name: 'auth',
     reducers: {

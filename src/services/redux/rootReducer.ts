@@ -6,7 +6,6 @@ export const logout = createAction('USER_LOGOUT');
 
 const appReducer = combineReducers({
     auth: authSlice,
-
 });
 
 const rootReducer = (state: any, action: any) => {
@@ -14,6 +13,15 @@ const rootReducer = (state: any, action: any) => {
         return appReducer(undefined, action as never);
     }
     return appReducer(state, action as never);
+};
+
+export type RootState = {
+    auth: {
+        isLoading: boolean;
+        successCode: string | null;
+        errorCode: string | null;
+        showUserDetailPopup: boolean;
+    };
 };
 
 export default rootReducer;

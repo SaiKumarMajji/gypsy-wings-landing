@@ -63,6 +63,8 @@ const Index = () => {
       name: "Jeyaprakash",
       image: studentJeyaprakash,
       rating: 5,
+      score: "82/100",
+      trainedIn: "20 days",
       review:
         "Best aviation academy in Hyderabad! The personalized mentorship and practical approach made all the difference in my pilot training journey.",
     },
@@ -444,9 +446,25 @@ const Index = () => {
                             </div>
                           </div>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed mb-4">
                           "{review.review}"
                         </p>
+                        {(review as any).score && (review as any).trainedIn && (
+                          <div className="mt-auto pt-4 border-t border-border">
+                            <div className="flex justify-between text-sm">
+                              <span className="text-muted-foreground">
+                                <strong className="text-primary">Score:</strong>{" "}
+                                {(review as any).score}
+                              </span>
+                              <span className="text-muted-foreground">
+                                <strong className="text-primary">
+                                  Trained in:
+                                </strong>{" "}
+                                {(review as any).trainedIn}
+                              </span>
+                            </div>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   </CarouselItem>

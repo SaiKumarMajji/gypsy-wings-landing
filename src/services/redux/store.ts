@@ -5,7 +5,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 
 import rootSaga from './sagas';
 import storage from './storage';
-import rootReducer from './rootReducer';
+import rootReducer, { RootState } from './rootReducer';
 
 
 const persistConfig = {
@@ -28,10 +28,10 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga);
 
-export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const persistor = persistStore(store);
 export default store;
+export type { RootState };

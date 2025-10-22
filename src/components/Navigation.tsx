@@ -5,6 +5,7 @@ import logo from "@/assets/gypsy-aviators-logo.png";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -14,6 +15,34 @@ const Navigation = () => {
     { href: "#mentor", label: "Meet Your Mentor" },
     { href: "#contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => ({
+        id: item.href.substring(1),
+        element: document.querySelector(item.href),
+      }));
+
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        if (section.element) {
+          const { offsetTop, offsetHeight } = section.element as HTMLElement;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -45,15 +74,23 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium text-foreground transition-colors`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`relative text-sm font-medium text-foreground transition-colors pb-1 ${
+                    isActive ? "text-primary" : ""
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full animate-in fade-in slide-in-from-bottom-1" />
+                  )}
+                </button>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,15 +112,22 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background border-t border-border">
             <div className="px-4 py-4 space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.substring(1);
+                return (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href)}
+                    className={`block w-full text-left text-sm font-medium transition-colors py-2 ${
+                      isActive
+                        ? "text-primary border-l-2 border-primary pl-2"
+                        : "text-foreground hover:text-primary"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
