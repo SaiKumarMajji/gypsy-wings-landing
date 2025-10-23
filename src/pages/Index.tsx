@@ -232,7 +232,7 @@ const Index = () => {
               Welcome to Gypsy Aviators Aviation Academy - GAAA
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-slide-in-right">
-              With 7+ years of hands-on aviation experience, industry insights,
+              With 10+ years of hands-on aviation experience, industry insights,
               and a passion for mentoring, we shape aviators and turn your dream
               of flying into reality.
             </p>
